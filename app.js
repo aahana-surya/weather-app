@@ -260,7 +260,6 @@ Vue.createApp({
         hilo += `  ·  💧 ${d.precipitation_probability_max[index]}% precip`;
       }
       this.heroHilo = hilo;
-
       this.sparklinePoints = h && h.temperature_2m ? this.buildSparklinePoints(h.temperature_2m) : '';
 
       this.stats = [
@@ -290,17 +289,17 @@ Vue.createApp({
       });
 
       const tips = [];
-      if (c.uv_index >= 6)                         tips.push('UV is high — pack sunscreen.');
-      if (c.wind_speed_10m > 25)                    tips.push('Winds are strong — secure loose items.');
-      if (d.precipitation_probability_max[0] >= 50) tips.push('Rain likely today — bring an umbrella.');
-      if (c.relative_humidity_2m > 80)              tips.push('High humidity — stay hydrated.');
-      if (c.apparent_temperature < 35)              tips.push('Feels very cold — dress in layers.');
-      if (c.apparent_temperature > 95)              tips.push('Feels very hot — limit outdoor exposure during peak hours.');
-      if ((c.visibility || 10000) < 3000)           tips.push('Low visibility — drive cautiously.');
+      if (c.uv_index >= 6)                         tips.push('UV is high: pack sunscreen.');
+      if (c.wind_speed_10m > 25)                    tips.push('Winds are strong: secure loose items.');
+      if (d.precipitation_probability_max[0] >= 50) tips.push('Rain likely today: bring an umbrella.');
+      if (c.relative_humidity_2m > 80)              tips.push('High humidity: stay hydrated.');
+      if (c.apparent_temperature < 35)              tips.push('Feels very cold: dress in layers.');
+      if (c.apparent_temperature > 95)              tips.push('Feels very hot: limit outdoor exposure during peak hours.');
+      if ((c.visibility || 10000) < 3000)           tips.push('Low visibility: drive cautiously.');
 
       this.travelNote = tips.length
         ? tips.join(' ')
-        : 'Conditions look reasonable for outdoor activities today.';
+        : "Today's a great day for outdoor activities!";
     },
     buildSparklinePoints(temps) {
       const slice = temps.slice(0, 24);

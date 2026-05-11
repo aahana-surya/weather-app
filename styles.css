@@ -51,6 +51,7 @@
  
     /* ── Typography ── */
     h1 {
+      text-align: center;
       font-family: 'DM Serif Display', serif;
       font-size: 30px;
       font-weight: 400;
@@ -62,6 +63,7 @@
       font-size: 13px;
       color: var(--text-muted);
       margin-bottom: 24px;
+      text-align: center;
     }
     .section-label {
       font-size: 11px;
